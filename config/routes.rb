@@ -1,7 +1,5 @@
 BootstrapSass::Application.routes.draw do
-  resources :assignments
-
-  root to: 'assignments#index'
+  # root to: 'assignments#index'
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'signout', to: 'sessions#destroy', as: 'signout'
 
