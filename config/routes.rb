@@ -1,5 +1,9 @@
 BootstrapSass::Application.routes.draw do
-  resources :teacher_student_links
+
+  resources :users
+
+
+
 
 
   root to: 'teacher_student_links#index'
