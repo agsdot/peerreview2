@@ -1,0 +1,2 @@
+module TeacherStudentLinksHelper
+end

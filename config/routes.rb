@@ -1,4 +1,7 @@
 BootstrapSass::Application.routes.draw do
+  resources :teacher_student_links
+
+
   # root to: 'assignments#index'
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'signout', to: 'sessions#destroy', as: 'signout'
