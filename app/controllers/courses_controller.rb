@@ -14,6 +14,11 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @course = Course.find(params[:id])
+    if signed_in?
+      @students = @course.students #assigns a student to that course
+      @teachers = @course.teachers #assigns a teacher to that course
+      @teacher = @teachers.include?(current_user)
+    end
 
     respond_to do |format|
       format.html # show.html.erb

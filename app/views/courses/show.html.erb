@@ -5,6 +5,17 @@
   <%= @course.name %>
 </p>
 
+<% if @teacher %>
+  You're a teacher!
+<% else %>
+  You're not a teacher.
+<% end %>
+
+<%= simple_form_for @course do |f| %>
+
+  <%= f.button :submit , 'Goto Assignments'%>
+<% end %>
+
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
