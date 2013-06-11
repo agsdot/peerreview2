@@ -2,12 +2,31 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
 
-  def statusworld
-      # @mahteach = @teachers << current_user unless @teachers.include?(current_user)
-      # @mahlearn = @students << current_user unless @students.include?(current_user)
-      # @rating = 5
+  # def statusworld
+  #     # @mahteach = @teachers << current_user unless @teachers.include?(current_user)
+  #     # @mahlearn = @students << current_user unless @students.include?(current_user)
+  #     # @rating = 5
 
-  end
+  # end
+
+  # def myclasses
+  #   class_status = params[:class_status]
+  #   # @courses = Course.all.select { |c| c.students.include? current_user}
+
+  #   #teacher
+  #   #student
+
+  #   # @courses = Course.all
+  #   # @courses = Course.all.map { |i| i.students}
+  #   if class_status == "student"
+  #     @courses = Course.all.select { |c| c.students.include? current_user}
+  #   else
+  #     @courses = Course.all.select { |c| c.teachers.include? current_user}
+  #   end
+
+
+  # end
+
 
   def index
     @courses = Course.all

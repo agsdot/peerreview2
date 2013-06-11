@@ -1,7 +1,5 @@
 BootstrapSass::Application.routes.draw do
-  get 'courses/statusworld', to: 'courses#statusworld'
   resources :courses
-
   resources :users
 
   root to: 'users#index'

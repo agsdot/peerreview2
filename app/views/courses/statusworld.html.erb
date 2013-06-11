@@ -13,7 +13,7 @@ Hi <%= current_user.name %>! Welcome to the Peer Review!
 
 
 
-<%= form_tag("/courses", :method => "get") do %>
+<%= form_tag("/courses/myclasses", :method => "get") do %>
   <%= radio_button_tag(:class_status, "teacher") %>
   <%= label_tag(:for_teacher, "teacher") %>
   <%= radio_button_tag(:class_status, "student") %>
