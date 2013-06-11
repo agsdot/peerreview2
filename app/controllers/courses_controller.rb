@@ -35,16 +35,12 @@ class CoursesController < ApplicationController
   def add_teacher_to_course
     @courses = Course.all
     @users = User.all
-# class UsersController < ApplicationController
-#   # GET /users
-#   # GET /users.json
-#   def index
-#     @users = User.all
 
   end
 
   def add_student_to_course
-    @course = Course.new
+    @courses = Course.all
+    @users = User.all
 
   end
 
