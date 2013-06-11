@@ -15,9 +15,35 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
     if signed_in?
-      @students = @course.students #assigns a student to that course
-      @teachers = @course.teachers #assigns a teacher to that course
+=begin
+      if params[:class_status] == "teacher"
+        @mahteach = @teachers << current_user unless @teachers.include?(current_user)
+      elsif params[:class_status] == "student"
+        @mahlearn = @students << current_user unless @students.include?(current_user)
+      else
+        raise current_user.inspect
+      end
+      # evaluating if ones status
+=end
+      @students = @course.students #assigns a student to that course array which it yields
+      @teachers = @course.teachers #course array which it yields teachers
       @teacher = @teachers.include?(current_user)
+      @student = @students.include?(current_user)
+          #current user status teacher or students
+      # setting ones status
+      # current_user
+
+      # @teachers << current_user
+      # @students << current_user
+
+      # set the current_user to teacher
+      # set the current_user to student
+
+      # c.teachers << u unless c.teachers.include?(rr)
+
+      @mahteach = @teachers << current_user unless @teachers.include?(current_user)
+      @mahlearn = @students << current_user unless @students.include?(current_user)
+        #setting their user status
     end
 
     respond_to do |format|
