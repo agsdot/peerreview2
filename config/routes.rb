@@ -1,10 +1,7 @@
 BootstrapSass::Application.routes.draw do
+  resources :courses
 
   resources :users
-
-
-
-
 
   root to: 'teacher_student_links#index'
   match 'auth/:provider/callback', to: 'sessions#create'
