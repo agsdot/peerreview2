@@ -27,6 +27,26 @@ class CoursesController < ApplicationController
 
   # end
 
+  def admin_create_course
+    @course = Course.new
+
+  end
+
+  def add_teacher_to_course
+    @courses = Course.all
+    @users = User.all
+# class UsersController < ApplicationController
+#   # GET /users
+#   # GET /users.json
+#   def index
+#     @users = User.all
+
+  end
+
+  def add_student_to_course
+    @course = Course.new
+
+  end
 
   def index
     @courses = Course.all

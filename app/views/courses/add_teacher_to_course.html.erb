@@ -1,0 +1,40 @@
+<% @courses.each do |course| %>
+  <tr>
+    <!-- <p><%= course.name %></p> -->
+    <p><%= link_to course.name, course %></p>
+
+<!--     <p><%= link_to 'Show', course %></p>
+ -->
+
+<!--     <p><%= link_to 'Edit', edit_course_path(course) %></p>
+ -->
+
+<!--     <p><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+ -->
+
+  </tr>
+<% end %>
+
+<p>.
+<p> Add User as Teacher to Course
+<p>
+<%= select("course", "course_id", @courses.collect {|course| [ course.name, course.id ] }, {:prompt => 'Select the Course'})
+%>
+<p>
+<%= select("user", "user_id", @users.collect {|user| [ user.name, user.id ] }, {:prompt => 'Select the User'})
+%>
+
+
+<%= form_tag("/courses/myclasses", :method => "get") do %>
+<%= select("course", "course_id", @courses.collect {|course| [ course.name, course.id ] }, {:prompt => 'Select the Course'})
+%>
+<%= select("user", "user_id", @users.collect {|user| [ user.name, user.id ] }, {:prompt => 'Select the User'})
+%>
+  <%= submit_tag("On to Courses") %>
+<% end %>
+
+<!-- select("post", "person_id", Person.all.collect {|p| [ p.name, p.id ] }, {:include_blank => 'None'})
+ -->
+
+<!--       model   course_id   @courses.all.coll     course.
+ -->
