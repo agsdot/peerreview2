@@ -3,7 +3,7 @@ BootstrapSass::Application.routes.draw do
 
   resources :users
 
-  root to: 'teacher_student_links#index'
+  root to: 'users#index'
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'signout', to: 'sessions#destroy', as: 'signout'
 
