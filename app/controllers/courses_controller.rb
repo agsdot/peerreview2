@@ -1,6 +1,14 @@
 class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
+
+  def statusworld
+      # @mahteach = @teachers << current_user unless @teachers.include?(current_user)
+      # @mahlearn = @students << current_user unless @students.include?(current_user)
+      # @rating = 5
+
+  end
+
   def index
     @courses = Course.all
 

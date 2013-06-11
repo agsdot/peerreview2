@@ -1,0 +1,22 @@
+<p>
+Hi <%= current_user.name %>! Welcome to the Peer Review!
+
+<p>Are you a:
+
+<p>
+<div>
+
+
+
+</div>
+
+
+
+
+<%= form_tag("/courses", :method => "get") do %>
+  <%= radio_button_tag(:class_status, "teacher") %>
+  <%= label_tag(:for_teacher, "teacher") %>
+  <%= radio_button_tag(:class_status, "student") %>
+  <%= label_tag(:for_student, "student") %>
+  <%= submit_tag("On to Courses") %>
+<% end %>
