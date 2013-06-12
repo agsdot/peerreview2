@@ -1,8 +1,7 @@
 BootstrapSass::Application.routes.draw do
 
-  resources :papers
 
-
+  get 'papers/create_paper', to: 'papers#create_paper', as: 'create_paper'
   get 'assignments/create_assignment', to: 'assignments#create_assignment', as: 'create_assignment'
   get 'courses/admin_create_course', to: 'courses#admin_create_course', as: 'admin_create_course'
   get 'courses/add_teacher_to_course', to: 'courses#add_teacher_to_course', as: 'add_teacher_to_course'
@@ -13,6 +12,8 @@ BootstrapSass::Application.routes.draw do
 
   get 'courses/new_course_teacher', to: 'courses#new_course_teacher', as: 'new_course_teacher'
   post 'courses/create_course_teacher', to: 'courses#create_course_teacher', as: 'create_course_teacher'
+
+  resources :papers
 
   resources :assignments
 

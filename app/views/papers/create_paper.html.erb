@@ -1,0 +1,20 @@
+<h1>New paper</h1>
+
+<%= simple_form_for(@paper) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :assignment, label: "Choose your Assignment",   as: :radio_buttons %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :file %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', papers_path %>
+
+

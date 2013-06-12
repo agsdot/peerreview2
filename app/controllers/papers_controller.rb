@@ -32,6 +32,11 @@ class PapersController < ApplicationController
     end
   end
 
+  def create_paper
+    @paper = Paper.new
+    @assignments = Assignment.all
+  end
+
   # GET /papers/1/edit
   def edit
     @paper = Paper.find(params[:id])
@@ -47,7 +52,10 @@ class PapersController < ApplicationController
         format.html { redirect_to @paper, notice: 'Paper was successfully created.' }
         format.json { render json: @paper, status: :created, location: @paper }
       else
-        format.html { render action: "new" }
+        # format.html { render action: "new" }
+        @assignments = Assignment.all
+        format.html { render action: "create_paper" }
+
         format.json { render json: @paper.errors, status: :unprocessable_entity }
       end
     end
