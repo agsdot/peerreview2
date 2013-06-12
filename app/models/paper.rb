@@ -4,6 +4,7 @@ class Paper < ActiveRecord::Base
   validates_presence_of :assignment_id, :name, :description
 
   mount_uploader :file, FileUploader
+  acts_as_commentable
 
 end
 
