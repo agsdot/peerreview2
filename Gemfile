@@ -30,6 +30,8 @@ gem 'dotenv-rails'
 gem 'carrierwave'
 gem 'fog'
 gem 'acts_as_commentable_with_threading'
+gem 'haml'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -12,9 +12,12 @@ BootstrapSass::Application.routes.draw do
   get 'courses/new_course_teacher', to: 'courses#new_course_teacher', as: 'new_course_teacher'
   post 'courses/create_course_teacher', to: 'courses#create_course_teacher', as: 'create_course_teacher'
 
-  resources :papers do
-      resources :comments, :only => [:create, :destroy]
-  end
+  # resources :papers do
+  resources :comments, :only => [:create, :destroy]
+  # end
+
+
+  resources :papers
 
   resources :assignments
 

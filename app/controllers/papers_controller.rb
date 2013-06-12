@@ -14,6 +14,8 @@ class PapersController < ApplicationController
   # GET /papers/1.json
   def show
     @paper = Paper.find(params[:id])
+    @comments = @paper.comment_threads.order('created_at desc')
+    @new_comment = Comment.build_from(@paper, current_user, "")
 
     respond_to do |format|
       format.html # show.html.erb
