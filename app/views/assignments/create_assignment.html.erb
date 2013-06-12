@@ -4,63 +4,9 @@
 <p>
 <h1>Create New assignment</h1>
 
-<%= simple_form_for(@assignment) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :course_id %>
-    <%= %>
-    <%= f.input :name %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
-
-<%= link_to 'Back', assignments_path %>
-
 <p>.
-  <% @courses.each do |course| %>
-    <p><%= link_to course.name, course %></td>
-<% end %>
-
-<p>.
-<p>.
-<p>.
-<p>.
-<p>.
-
-<p>.
-<p>.
-<p>.
-<p>.
-<p>.
-
-<p>
-<%= form_tag( create_course_teacher_path , :method => "post") do %>
-
-<%= select("Course", "course_id", @courses.collect {|course| [ course.name, course.id ] }, {:prompt => 'Choose Course for assignment'})
-%>
-<p>
-<%= submit_tag("On to Assignments") %>
-<% end %>
-
-<!-- select("post", "person_id", Person.all.collect {|p| [ p.name, p.id ] }, {:include_blank => 'None'})
- -->
-
-<!--       model   course_id   @courses.all.coll     course.
- -->
-
-
-
-
-<p>.
-<p>.
-<p>.
-<p>.
-<p>.
-
+  <p>
+<h2>Using Simple_Forms</h2>
 <%= simple_form_for(@assignment) do |f| %>
   <%= f.error_notification %>
 
@@ -75,13 +21,12 @@
   </div>
 <% end %>
 
-<%= link_to 'Back', assignments_path %>
-
 <p>.
 <p>.
 <p>.
 <p>.
 <p>.
+<h2>Using Rails Form Helpers</h2>
 <%= form_for(@assignment) do |f| %>
 <div class="field">
   <%= f.label :name %><br />
@@ -96,5 +41,6 @@
 <%= submit_tag("On to Assignments") %>
 
 <% end %>
+<%= link_to 'Back', assignments_path %>
 
 <!-- http://stackoverflow.com/questions/1956191/ruby-on-rails-drop-down-menu -->
