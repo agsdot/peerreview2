@@ -2,12 +2,15 @@ BootstrapSass::Application.routes.draw do
   get 'courses/admin_create_course', to: 'courses#admin_create_course', as: 'admin_create_course'
   get 'courses/add_teacher_to_course', to: 'courses#add_teacher_to_course', as: 'add_teacher_to_course'
   get 'courses/add_student_to_course', to: 'courses#add_student_to_course', as: 'add_student_to_course'
+  get 'courses/welcome', to: 'courses#welcome', as: 'welcome'
 
   resources :courses
 
   resources :users
 
   root to: 'users#index'
+  # root to: 'users#index'
+
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'signout', to: 'sessions#destroy', as: 'signout'
 

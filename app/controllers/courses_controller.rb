@@ -42,6 +42,10 @@ class CoursesController < ApplicationController
     @courses = Course.all
     @users = User.all
 
+  def welcome
+
+  end
+
   end
 
   def index
