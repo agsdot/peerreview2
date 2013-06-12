@@ -1,8 +1,10 @@
 BootstrapSass::Application.routes.draw do
   get 'courses/admin_create_course', to: 'courses#admin_create_course', as: 'admin_create_course'
   get 'courses/add_teacher_to_course', to: 'courses#add_teacher_to_course', as: 'add_teacher_to_course'
-  get 'courses/add_student_to_course', to: 'courses#add_student_to_course', as: 'add_student_to_course'
   get 'courses/welcome', to: 'courses#welcome', as: 'welcome'
+  get 'courses/new_course_student', to: 'courses#new_course_student', as: 'new_course_student'
+
+  post 'courses/create_course_student', to: 'courses#create_course_student', as: 'create_course_student'
 
   resources :courses
 

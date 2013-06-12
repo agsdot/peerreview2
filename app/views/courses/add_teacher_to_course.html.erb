@@ -1,7 +1,7 @@
 
 <p> Add User as Teacher to Course
 
-
+<!-- named routes -->
 <%= form_tag("/courses/", :method => "get") do %>
 <%= select("course", "course_id", @courses.collect {|course| [ course.name, course.id ] }, {:prompt => 'Select the Course'})
 %>
