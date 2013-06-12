@@ -7,7 +7,8 @@
     <%= f.association :assignment, label: "Choose your Assignment",   as: :radio_buttons %>
     <%= f.input :name %>
     <%= f.input :description %>
-    <%= f.input :file %>
+    <%= f.input :file, :as => :file, :label => "PDF" %>
+
   </div>
 
   <div class="form-actions">

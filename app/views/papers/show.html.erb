@@ -1,3 +1,13 @@
+<script type="text/javascript">
+
+window.onload = function (){
+
+  var success = new PDFObject({ url: "<%= @paper.file %>" }).embed("pdf");
+
+};
+
+</script>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -18,8 +28,17 @@
 <p>
   <b>File:</b>
   <%= @paper.file %>
+
 </p>
+
+<h1>  <%= @paper.description %></h1>
+
+<div id="pdf">It appears you don't have Adobe Reader or PDF support in this web browser. <a href="<%= @paper.file %>">Click here to download the PDF</a></div>
+
+<p><a href="/index.php">&laquo; Return to PDFObject home</a></p>
+
 
 
 <%= link_to 'Edit', edit_paper_path(@paper) %> |
 <%= link_to 'Back', papers_path %>
+
