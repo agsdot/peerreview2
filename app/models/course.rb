@@ -4,5 +4,6 @@ class Course < ActiveRecord::Base
   has_many :students, :class_name => "User", :through => :course_students
   has_many :course_teachers
   has_many :teachers, :class_name => "User", :through => :course_teachers
+  has_many :assignments
 end
 
