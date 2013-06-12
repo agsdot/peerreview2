@@ -1,0 +1,19 @@
+
+<p> Add User as Teacher to Course
+
+
+<%= form_tag( create_course_teacher_path , :method => "post") do %>
+<%= select("CourseTeacher", "course_id", @courses.collect {|course| [ course.name, course.id ] }, {:prompt => 'Select the Course'})
+%>
+<p>
+<%= select("CourseTeacher", "user_id", @users.collect {|user| [ user.name, user.id ] }, {:prompt => 'Select the User for Teacher'})
+%>
+<p>
+  <%= submit_tag("On to Courses") %>
+<% end %>
+
+<!-- select("post", "person_id", Person.all.collect {|p| [ p.name, p.id ] }, {:include_blank => 'None'})
+ -->
+
+<!--       model   course_id   @courses.all.coll     course.
+ -->

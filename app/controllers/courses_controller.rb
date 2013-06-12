@@ -32,17 +32,37 @@ class CoursesController < ApplicationController
 
   end
 
-  def add_teacher_to_course
+  # def add_teacher_to_course
+  #   @courses = Course.all
+  #   @users = User.all
+  # end
+
+  def new_course_teacher
     @courses = Course.all
     @users = User.all
+  end
+
+  def create_course_teacher
+    c = Course.find params['CourseTeacher']['course_id']
+    t = User.find params['CourseTeacher']['user_id']
+
+    if CourseTeacher.where(course_id: params['CourseTeacher']['course_id'], teacher_id: params['CourseTeacher']['user_id']).count == 0
+      c.teachers << t
+      c.save
+      flash[:notice] = "YES!"
+      redirect_to new_course_teacher_path, notice: "Added user to course"
+    else
+      flash[:notice] = "NO! DOESNT WORK!"
+      redirect_to new_course_teacher_path, notice: "Added user to course"
+    end
 
   end
 
-  def add_student_to_course
-    # @courses = Course.all
-    # @users = User.all
-    CourseStudent.create(params)
-  end
+  # def add_student_to_course
+  #   # @courses = Course.all
+  #   # @users = User.all
+  #   CourseStudent.create(params)
+  # end
 
   def new_course_student
     @courses = Course.all
