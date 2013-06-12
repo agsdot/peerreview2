@@ -1,0 +1,3 @@
+
+<%= select("Assignment", "course_id", @courses.collect {|course| [ course.name, course.id ] }, {:prompt => 'Choose Course for assignment'})
+%>

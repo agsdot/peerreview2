@@ -36,7 +36,6 @@ class AssignmentsController < ApplicationController
   def create_assignment
     @assignment = Assignment.new
     @courses = Course.all
-    @users = User.all
   end
 
 
@@ -55,7 +54,10 @@ class AssignmentsController < ApplicationController
         format.html { redirect_to @assignment, notice: 'Assignment was successfully created.' }
         format.json { render json: @assignment, status: :created, location: @assignment }
       else
-        format.html { render action: "new" }
+        # format.html { render action: "new" }
+        @courses = Course.all
+        format.html { render action: "create_assignment" }
+
         format.json { render json: @assignment.errors, status: :unprocessable_entity }
       end
     end

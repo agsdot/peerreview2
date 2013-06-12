@@ -31,13 +31,6 @@
 <p>.
 <p>.
 
-<%= form_tag( create_course_teacher_path , :method => "post") do %>
-<%= select("CourseTeacher", "user_id", @users.collect {|user| [ user.name, user.id ] }, {:prompt => 'Select the User for Teacher'})
-%>
-<p>
-<%= submit_tag("On to Courses") %>
-<% end %>
-
 <p>.
 <p>.
 <p>.
@@ -68,15 +61,40 @@
 <p>.
 <p>.
 
+<%= simple_form_for(@assignment) do |f| %>
+  <%= f.error_notification %>
 
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.association :course,   as: :radio_buttons %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', assignments_path %>
+
+<p>.
+<p>.
+<p>.
+<p>.
+<p>.
 <%= form_for(@assignment) do |f| %>
 <div class="field">
   <%= f.label :name %><br />
   <%= f.text_field :name %>
+  <%= f.label :course %>
+  <%= f.select :course_id, options_from_collection_for_select(Course.all, :id, :name)  %>
 </div>
-<%= select("Course", "course_id", @courses.collect {|course| [ course.name, course.id ] }, {:prompt => 'Choose Course for assignment'})
-%>
+<!--
+<%= select("Assignment", "course_id", @courses.collect {|course| [ course.name, course.id ] }, {:prompt => 'Choose Course for assignment'})
+%> -->
 <p>
 <%= submit_tag("On to Assignments") %>
 
 <% end %>
+
+<!-- http://stackoverflow.com/questions/1956191/ruby-on-rails-drop-down-menu -->
