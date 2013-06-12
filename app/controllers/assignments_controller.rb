@@ -10,6 +10,7 @@ class AssignmentsController < ApplicationController
     end
   end
 
+
   # GET /assignments/1
   # GET /assignments/1.json
   def show
@@ -31,6 +32,13 @@ class AssignmentsController < ApplicationController
       format.json { render json: @assignment }
     end
   end
+
+  def create_assignment
+    @assignment = Assignment.new
+    @courses = Course.all
+
+  end
+
 
   # GET /assignments/1/edit
   def edit

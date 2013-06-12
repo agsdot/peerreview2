@@ -1,0 +1,30 @@
+<p>.
+  <p>
+  create_assignment.html.erb
+<p>
+<h1>Create New assignment</h1>
+
+<%= simple_form_for(@assignment) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :course_id %>
+    <%= %>
+    <%= f.input :name %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', assignments_path %>
+
+<p>.
+  <p>
+  <% @courses.each do |course| %>
+  <tr>
+    <p><%= link_to course.name, course %></td>
+  </tr>
+<% end %>
+</table>
