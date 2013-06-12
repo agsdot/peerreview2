@@ -36,7 +36,7 @@ class AssignmentsController < ApplicationController
   def create_assignment
     @assignment = Assignment.new
     @courses = Course.all
-
+    @users = User.all
   end
 
 

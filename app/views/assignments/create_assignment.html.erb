@@ -21,10 +21,62 @@
 <%= link_to 'Back', assignments_path %>
 
 <p>.
-  <p>
   <% @courses.each do |course| %>
-  <tr>
     <p><%= link_to course.name, course %></td>
-  </tr>
 <% end %>
-</table>
+
+<p>.
+<p>.
+<p>.
+<p>.
+<p>.
+
+<%= form_tag( create_course_teacher_path , :method => "post") do %>
+<%= select("CourseTeacher", "user_id", @users.collect {|user| [ user.name, user.id ] }, {:prompt => 'Select the User for Teacher'})
+%>
+<p>
+<%= submit_tag("On to Courses") %>
+<% end %>
+
+<p>.
+<p>.
+<p>.
+<p>.
+<p>.
+
+<p>
+<%= form_tag( create_course_teacher_path , :method => "post") do %>
+
+<%= select("Course", "course_id", @courses.collect {|course| [ course.name, course.id ] }, {:prompt => 'Choose Course for assignment'})
+%>
+<p>
+<%= submit_tag("On to Assignments") %>
+<% end %>
+
+<!-- select("post", "person_id", Person.all.collect {|p| [ p.name, p.id ] }, {:include_blank => 'None'})
+ -->
+
+<!--       model   course_id   @courses.all.coll     course.
+ -->
+
+
+
+
+<p>.
+<p>.
+<p>.
+<p>.
+<p>.
+
+
+<%= form_for(@assignment) do |f| %>
+<div class="field">
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+</div>
+<%= select("Course", "course_id", @courses.collect {|course| [ course.name, course.id ] }, {:prompt => 'Choose Course for assignment'})
+%>
+<p>
+<%= submit_tag("On to Assignments") %>
+
+<% end %>
