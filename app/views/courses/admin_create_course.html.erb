@@ -5,6 +5,17 @@ Create Course
 
 <h1>As Admin create New course</h1>
 
-<%= render 'form' %>
+<%= simple_form_for(@course) do |f| %>
+  <%= f.error_notification %>
 
-<%= link_to 'Back', courses_path %>
+  <div class="form-inputs">
+    <%= f.input :name %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+<div><%= link_to 'Back', courses_path %><%= render 'logo_course' %></div>
+
+

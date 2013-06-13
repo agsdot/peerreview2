@@ -1,12 +1,8 @@
-<p>.
-  <p>
-  create_assignment.html.erb
-<p>
-<h1>Create New assignment</h1>
 
-<p>.
+<p>
+<h1>Create New Assignment</h1>
+
   <p>
-<h2>Using Simple_Forms</h2>
 <%= simple_form_for(@assignment) do |f| %>
   <%= f.error_notification %>
 
@@ -20,26 +16,3 @@
   </div>
 <% end %>
 
-<p>.
-<p>.
-<p>.
-<p>.
-<p>.
-<h2>Using Rails Form Helpers</h2>
-<%= form_for(@assignment) do |f| %>
-<div class="field">
-  <%= f.label :name %><br />
-  <%= f.text_field :name %>
-  <%= f.label :course %>
-  <%= f.select :course_id, options_from_collection_for_select(Course.all, :id, :name)  %>
-</div>
-<!--
-<%= select("Assignment", "course_id", @courses.collect {|course| [ course.name, course.id ] }, {:prompt => 'Choose Course for assignment'})
-%> -->
-<p>
-<%= submit_tag("On to Assignments") %>
-
-<% end %>
-<%= link_to 'Back', assignments_path %>
-
-<!-- http://stackoverflow.com/questions/1956191/ruby-on-rails-drop-down-menu -->
