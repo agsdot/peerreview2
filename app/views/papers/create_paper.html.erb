@@ -4,7 +4,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :assignment, label: "Choose your Assignment",   as: :radio_buttons %>
+    <%= f.association :assignment, label: "Choose your Assignment", prompt: "Assignment List" %>
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :file, :as => :file, :label => "PDF" %>
