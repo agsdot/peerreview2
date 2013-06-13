@@ -8,22 +8,32 @@
 <% if @teacher %>
   You're a teacher!
 <% else %>
-  You're not a teacher.
+  You're not a teacher.  Ask the Admin to add you to this course
 <% end %>
 
 <p>
-<div>
-<%= radio_button_tag(:class_status, "teacher") %>
-<%= label_tag(:for_teacher, "teacher") %>
-<%= radio_button_tag(:class_status, "student") %>
-<%= label_tag(:for_student, "student") %>
-</div>
 
-<%= simple_form_for @course do |f| %>
-  <%= f.button :submit , 'Goto Assignments'%>
-<% end %>
 
 
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
+
+<p>
+======
+
+<p>
+
+<h2>Choose</h2>
+<form action="/assignments" method="get">
+  <select name="id">
+    <% @assignments.each do |assignment| %>
+      <option value="<%= assignment.id %>">
+        <%= assignment.name %>
+      </option>
+    <% end %>
+  </select>
+  <button class="btn btn-primary">
+    Go to Assignment
+  </button>
+</form>

@@ -151,6 +151,8 @@ class CoursesController < ApplicationController
       @mahlearn = @students << current_user unless @students.include?(current_user)
         #setting their user status
     end
+    @assignments = Assignment.all
+
 
     respond_to do |format|
       format.html # show.html.erb

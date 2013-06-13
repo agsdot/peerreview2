@@ -2,6 +2,11 @@ class AssignmentsController < ApplicationController
   # GET /assignments
   # GET /assignments.json
   def index
+    if params[:id]
+      @assignment = Assignment.find_by_id(params[:id])
+      redirect_to(@assignment) and return if @assignment
+    end
+
     @assignments = Assignment.all
 
     respond_to do |format|
