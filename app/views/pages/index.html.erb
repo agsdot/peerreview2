@@ -1,7 +1,96 @@
-  get 'courses/welcome', to: 'courses#welcome', as: 'welcome'
 
-<p>Hello
+
+<style type="text/css">
+
+/*.example7 p {
+  font-size: 2em;
+  color: #F4F1DE;
+  text-transform:uppercase;
+}
+
+.example7 p:letter {
+  width: 1em;
+  text-align: center;
+}
+
+.example7 p:letter:nth-child(odd) {
+  -webkit-transform: skewY(-15deg);
+  -moz-transform: skewY(-15deg);
+  -o-transform: skewY(-15deg);
+  transform: skewY(-15deg);
+  background-color: #E24B3B;
+}
+
+.example7 p:letter:nth-child(even) {
+  -webkit-transform: skewY(15deg);
+  -moz-transform: skewY(15deg);
+  -o-transform: skewY(15deg);
+  transform: skewY(15deg);
+  background-color: #A93629;
+}
+
+.pre, pre {
+  background:#ebebeb;
+  border:2px solid #ccc;
+  padding:5px 35px;
+  margin:5px 0;
+  vertical-align:middle;
+  overflow:auto;
+}*/
+
+.example7 p {
+  font-size: 4em;
+  color: #F4F1DE;
+  text-transform:uppercase;
+}
+
+.example7 p:letter {
+  width: 2em;
+  height: 1em;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.example7 p:letter:nth-child(odd) {
+  -webkit-transform: skewY(-15deg);
+  -moz-transform: skewY(-15deg);
+  -o-transform: skewY(-15deg);
+  transform: skewY(-15deg);
+  background-color: #E24B3B;
+}
+
+.example7 p:letter:nth-child(even) {
+  -webkit-transform: skewY(15deg);
+  -moz-transform: skewY(15deg);
+  -o-transform: skewY(15deg);
+  transform: skewY(15deg);
+  background-color: #A93629;
+}
+
+.pre, pre {
+  background:#ebebeb;
+/*  border:2px solid #ccc;*/
+  padding:25px 35px;
+  margin:5px 0;
+  vertical-align:middle;
+  overflow:auto;
+}
+
+</style>
+</head>
+
+  <div class="pre example7">
+    <p>Feed&#032;&#060;&#060;&#060;</p>
+  </div>
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://clearideaz.com/assets/jkerny/lib/jkerny.js"></script>
+
+</body>
+
+<p>Hello!
 <p>Please signin to the Peer Review App
 
 <p>
 <%= link_to "Sign in with Twitter", "/auth/twitter"%>
+
