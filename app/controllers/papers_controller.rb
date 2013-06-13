@@ -38,6 +38,8 @@ class PapersController < ApplicationController
 
   def create_paper
     @paper = Paper.new
+    @papers = Paper.all
+
     @assignments = Assignment.all
   end
 
@@ -58,6 +60,7 @@ class PapersController < ApplicationController
       else
         # format.html { render action: "new" }
         @assignments = Assignment.all
+        @papers = Paper.all
         format.html { render action: "create_paper" }
 
         format.json { render json: @paper.errors, status: :unprocessable_entity }

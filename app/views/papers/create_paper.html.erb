@@ -35,3 +35,18 @@
 <%= link_to 'Back', papers_path %>
 
 
+
+
+
+<p>====
+
+
+
+<h1>Listing of all papers</h1>
+
+<% @papers.each do |paper| %>
+    <p><%= link_to paper.name, paper %> : <%= paper.description %><p>
+<% end %>
+
+
+<br />
