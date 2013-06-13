@@ -28,7 +28,7 @@ BootstrapSass::Application.routes.draw do
 
   resources :users
 
-  root to: 'users#index'
+  root to: 'pages#index'
   # root to: 'users#index'
 
   match 'auth/:provider/callback', to: 'sessions#create'

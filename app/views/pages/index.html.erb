@@ -68,19 +68,20 @@
 }
 
 .pre, pre {
-  background:#ebebeb;
+  /*background:#ebebeb;*/
 /*  border:2px solid #ccc;*/
   padding:25px 35px;
   margin:5px 0;
   vertical-align:middle;
   overflow:auto;
+  text-align: center;
 }
 
 </style>
 </head>
 
   <div class="pre example7">
-    <p>Feed&#032;&#060;&#060;&#060;</p>
+    <p>Feed&#129;&#060;&#060;&#060;</p>
   </div>
 
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
@@ -89,8 +90,9 @@
 </body>
 
 <p>Hello!
-<p>Please signin to the Peer Review App
+<p>Please signin to the Feed <<< Peer Review App
 
 <p>
 <%= link_to "Sign in with Twitter", "/auth/twitter"%>
+
 
