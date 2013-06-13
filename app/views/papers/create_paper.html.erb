@@ -1,10 +1,26 @@
+
+
 <h1>New paper</h1>
+<p>
+
+<!-- 1.9.3-p392 :096 > Paper.first.assignment.name -->
+<!-- f.assignment.name
+@assignments.find(var).name -->
+<!-- Assignment.find(var).name -->
 
 <%= simple_form_for(@paper) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :assignment, label: "Choose your Assignment", prompt: "Assignment List" %>
+<!--     <%= f.association :assignment, label: "Choose your Assignment", prompt: "Assignment List" %> -->
+    <% if params[:id] %>
+    <% var =  params[:id] %>
+    <%= f.association :assignment, label: "Select Your Assignment: " + Assignment.find(var).name %>
+    <% else %>
+    <%= f.association :assignment, label: "Select Your Assignment: " %>
+    <% end %>
+
+
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :file, :as => :file, :label => "PDF" %>

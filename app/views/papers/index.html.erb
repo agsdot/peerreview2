@@ -13,7 +13,7 @@
 
 <% @papers.each do |paper| %>
   <tr>
-    <td><%= paper.assignment_id %></td>
+    <td><%= paper.assignment_id %> <%= paper.assignment.name %></td>
     <td><%= paper.name %></td>
     <td><%= paper.description %></td>
     <td><%= paper.file %></td>

@@ -25,7 +25,7 @@
 <p>
 
 <h2>Choose</h2>
-<form action="/assignments" method="get">
+<form action="/papers/create_paper" method="get">
   <select name="id">
     <% @assignments.each do |assignment| %>
       <option value="<%= assignment.id %>">
