@@ -12,8 +12,7 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.association :course,   as: :radio_buttons %>
-
+    <%= f.association :course, label: "Put your class in a Course", prompt: "Course List" %>
   </div>
 
   <div class="form-actions">
