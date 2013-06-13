@@ -1,15 +1,21 @@
-select_course.html.erb
-
 <h2>Select Course</h2>
 
 
-<% @courses.each do |course| %>
-
-
-    <p><%= link_to course.name, course %>
-
-<% end %>
 <p>
   <br>
 <%= link_to 'New Course', new_course_path %>
 
+
+<h2>Using Simple_Forms</h2>
+<form action="/courses" method="get">
+  <select name="id">
+    <% @courses.each do |course| %>
+      <option value="<%= course.id %>">
+        <%= course.name %>
+      </option>
+    <% end %>
+  </select>
+  <button>
+    Go to course
+  </button>
+</form>

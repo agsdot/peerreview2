@@ -98,6 +98,11 @@ class CoursesController < ApplicationController
 
 
   def index
+    if params[:id]
+      @course = Course.find_by_id(params[:id])
+      redirect_to(@course) and return if @course
+    end
+
     @courses = Course.all
 
     respond_to do |format|
