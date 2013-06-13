@@ -1,0 +1,15 @@
+select_course.html.erb
+
+<h2>Select Course</h2>
+
+
+<% @courses.each do |course| %>
+
+
+    <p><%= link_to course.name, course %>
+
+<% end %>
+<p>
+  <br>
+<%= link_to 'New Course', new_course_path %>
+
