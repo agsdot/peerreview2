@@ -3,16 +3,16 @@
 <style type="text/css">
 
 .example7 p {
-  font-size: 4em;
+  font-size: 2em;
   color: #F4F1DE;
   text-transform:uppercase;
 }
 
 .example7 p:letter {
-  width: 2em;
-  height: 1em;
+  width: 1em;
+  height: 1.2em;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 6px;
 }
 
 .example7 p:letter:nth-child(odd) {
@@ -20,7 +20,7 @@
   -moz-transform: skewY(-15deg);
   -o-transform: skewY(-15deg);
   transform: skewY(-15deg);
-  background-color: #E24B3B;
+  background-color: #54C94E;
 }
 
 .example7 p:letter:nth-child(even) {
@@ -28,39 +28,24 @@
   -moz-transform: skewY(15deg);
   -o-transform: skewY(15deg);
   transform: skewY(15deg);
-  background-color: #A93629;
+  background-color: #63ED5B;
 }
 
 .pre, pre {
   /*background:#ebebeb;*/
 /*  border:2px solid #ccc;*/
-  padding:25px 35px;
+  padding:25px 0 0 0;
   margin:5px 0;
   vertical-align:middle;
   overflow:auto;
-  text-align: center;
+  text-align: right;
 }
 
 </style>
 
 <div class="pre example7">
-  <p>Think&#129;&#060;&#060;&#060;</p>
+  <p>Papers!</p>
 </div>
 
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script src="http://clearideaz.com/assets/jkerny/lib/jkerny.js"></script>
-
-<p>Hello!
-<p>Please signin to the Peer Review App, Feed <<<
-
-<p>
-
-<div id="user_nav">
-  <% if current_user %>
-    Signed in as <%= current_user.name %>
-    <%= link_to "Sign out", signout_path %>
-  <% else %>
-    <%= link_to "Sign in with Twitter", "/auth/twitter"%>
-  <% end %>
-</div>
-
