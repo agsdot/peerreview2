@@ -7,7 +7,7 @@ class Course < ActiveRecord::Base
   has_many :assignments
 
   def can_modify(user)
-    self.teachers.include? user
+    return self.teachers.include? user
   end
 end
 
