@@ -1,4 +1,5 @@
 
+<link href="http://usablica.github.io/intro.js/introjs.css?v=040" rel="stylesheet">
 
 <style type="text/css">
 
@@ -41,6 +42,9 @@
   text-align: center;
 }
 
+.center {
+  text-align: center;
+}
 </style>
 
 <div class="pre example7">
@@ -50,7 +54,7 @@
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script src="http://clearideaz.com/assets/jkerny/lib/jkerny.js"></script>
 
-<p>Hello!
+<!-- <p>Hello!
 <p>Please signin to the Peer Review App, Feed <<<
 
 <p>
@@ -63,4 +67,15 @@
     <%= link_to "Sign in with Twitter", "/auth/twitter"%>
   <% end %>
 </div>
+<br> -->
+ <h1 class="center" data-step="1" data-intro="Hello all! Welcome to Feed < Peer Review App!!!">Peer Review App<span style="font-weight: normal;"></span></h1>
+  <p class="lead center" data-step="2" data-intro="It's where Students and Teachers help one another :)">Where Students and Teachers can give feedback!</p>
 
+<!--   <p class="lead" data-step="5" data-intro="It's where Students and Teachers help one another :)">Where Students and Teachers can give feedback!</p>
+ -->
+
+
+  <p class="center"><a class="btn btn-large btn-success" href="javascript:void(0);" onclick="javascript:introJs().start();">Show me how</a>
+
+
+<script type="text/javascript" src="http://usablica.github.io/intro.js/intro.js?v=040"></script>

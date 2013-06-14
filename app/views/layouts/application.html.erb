@@ -21,7 +21,7 @@
                     <a class="brand" href="/">Feed &#60;</a>
                     <li><%= link_to "About", pages_about_path %></li>
                      <li class="dropdown" id="accountmenu">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin<b class="caret"></b></a>
+                        <a class="dropdown-toggle"  data-step="3" data-intro="Admins organize here" data-position='left' data-toggle="dropdown" href="#">Admin<b class="caret"></b></a>
                         <ul class="dropdown-menu">
 
                             <li><%= link_to "List All Users", users_path %></li>
@@ -33,7 +33,7 @@
                         </ul>
                       </li>
                      <li class="dropdown" id="accountmenu">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Teacher<b class="caret"></b></a>
+                        <a class="dropdown-toggle" data-step="4" data-intro="Teachers here are your courses!"  data-position='bottom' data-toggle="dropdown" href="#">Teacher<b class="caret"></b></a>
                         <ul class="dropdown-menu">
 
                             <li><%= link_to "List All Assignments", assignments_path %></li>
@@ -46,7 +46,7 @@
                         </ul>
                       </li>
                      <li class="dropdown" id="accountmenu">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Student<b class="caret"></b></a>
+                        <a class="dropdown-toggle" data-step="5" data-intro="Students see your papers here!"  data-position='right' data-toggle="dropdown" href="#">Student<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><%= link_to "List Papers", papers_path %></li>
                             <li class="divider"></li>
@@ -60,7 +60,7 @@
                     <li><%= link_to "Code", pages_code_path %></li>
 
                 </ul>
-                <ul class="nav pull-right">
+                <ul class="nav pull-right" data-step="6" data-intro="Sign in with Twitter here" data-position='left'>
                         <% if current_user %>
                     <li><%= link_to "Signed in as "+ current_user.name + ", Sign out", signout_path %></li>
                         <% else %>
