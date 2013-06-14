@@ -6,5 +6,10 @@ class Paper < ActiveRecord::Base
   mount_uploader :file, FileUploader
   acts_as_commentable
 
+  def can_modify(user)
+    return self.assignment.course.teachers.include? user
+  end
+
+
 end
 
