@@ -17,16 +17,33 @@
     <header class="navbar navbar-fixed-top">
       <nav class="navbar-inner">
         <div class="container">
+                <ul class="nav">
+                    <a class="brand" href="">Feed &#60;</a>
 
-          <div id="user_nav">
-            <% if current_user %>
-              Signed in as <%= current_user.name %>
-              <%= link_to "Sign out", signout_path %>
-            <% else %>
-              <%= link_to "Sign in with Twitter", "/auth/twitter"%>
-            <% end %>
-          </div>
+                    <li><a href="#">Admin</a></li>
+                    <li><a href="#">Teacher</a></li>
+                    <li><a href="#">Student</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Code</a></li>
 
+                     <li class="dropdown" id="accountmenu">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tutorials<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">PHP</a></li>
+                            <li><a href="#">MySQL</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">JavaScript</a></li>
+                            <li><a href="#">HTML5</a></li>
+                        </ul>
+
+                </ul>
+                <ul class="nav pull-right">
+                        <% if current_user %>
+                    <li><%= link_to "Signed in as "+ current_user.name + ", Sign out", signout_path %></li>
+                        <% else %>
+                    <li><%= link_to "Sign in with Twitter", "/auth/twitter"%></li>
+                        <% end %>
+                </ul>
         </div>
       </nav>
     </header>
