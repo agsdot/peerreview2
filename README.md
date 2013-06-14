@@ -1,7 +1,6 @@
-A small project to test the Bootstrap-Sass gem integration with the
-Rails project.
+Project Project Feed <
 
-Followed guidelines of the following Daniel Kehoe page :
-http://railsapps.github.io/twitter-bootstrap-rails.html
+A Peer Review App for students and teachers to comment on student papers uploaded as pdf.
 
-Tests out fine in the "testing" branch of the project.
+Iteration 1 @
+vast-reaches-4380.herokuapp.com
