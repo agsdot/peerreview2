@@ -1,5 +1,9 @@
 BootstrapSass::Application.routes.draw do
   get '/', to: 'pages#index', as: 'pages_index'
+  get '/about', to: 'pages#about', as: 'pages_about'
+  get '/code', to: 'pages#code', as: 'pages_code'
+
+
   get 'papers/create_paper', to: 'papers#create_paper', as: 'create_paper'
   get 'assignments/create_assignment', to: 'assignments#create_assignment', as: 'create_assignment'
   get 'courses/admin_create_course', to: 'courses#admin_create_course', as: 'admin_create_course'
