@@ -10,6 +10,9 @@ class Paper < ActiveRecord::Base
     return self.assignment.course.teachers.include? user
   end
 
+  def filename_short
+     self.file.to_s.split('/')[-1] #from file.name full URL name to loremipsum.pdf
+  end
 
 end
 
