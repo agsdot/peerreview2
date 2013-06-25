@@ -16,7 +16,7 @@ class PapersController < ApplicationController
   # GET /papers/1.json
   def show
     @paper = Paper.find(params[:id])
-    @comments = @paper.comment_threads.order('created_at desc')
+    @comments = @paper.comment_threads.order('created_at asc')
     @new_comment = Comment.build_from(@paper, current_user, "")
 
     respond_to do |format|
@@ -45,6 +45,7 @@ class PapersController < ApplicationController
 
   # GET /papers/1/edit
   def edit
+
     @paper = Paper.find(params[:id])
   end
 
