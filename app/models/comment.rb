@@ -9,10 +9,10 @@ class Comment < ActiveRecord::Base
   # want user to vote on the quality of comments.
   #acts_as_votable
 
-  def can_delete?(user)
-    self.commentable.can_modify(user) || self.user == user
+  # def can_delete?(user)
+  #   self.commentable.can_modify(user) || self.user == user
 
-  end
+  # end
 
   belongs_to :commentable, :polymorphic => true
 

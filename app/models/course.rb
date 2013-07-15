@@ -6,8 +6,8 @@ class Course < ActiveRecord::Base
   has_many :teachers, :class_name => "User", :through => :course_teachers
   has_many :assignments
 
-  def can_modify(user)
-    return self.teachers.include? user
-  end
+  # def can_modify(user)
+  #   return self.teachers.include? user
+  # end
 end
 
