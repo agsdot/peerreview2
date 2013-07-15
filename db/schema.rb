@@ -14,64 +14,64 @@
 ActiveRecord::Schema.define(:version => 20130612223405) do
 
   create_table "assignments", :force => true do |t|
-    t.integer  "course_id"
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer   "course_id"
+    t.string    "name"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "comments", :force => true do |t|
-    t.integer  "commentable_id",   :default => 0
-    t.string   "commentable_type", :default => ""
-    t.string   "title",            :default => ""
-    t.text     "body",             :default => ""
-    t.string   "subject",          :default => ""
-    t.integer  "user_id",          :default => 0,  :null => false
-    t.integer  "parent_id"
-    t.integer  "lft"
-    t.integer  "rgt"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
+    t.integer   "commentable_id",   :default => 0
+    t.string    "commentable_type", :default => ""
+    t.string    "title",            :default => ""
+    t.text      "body",             :default => ""
+    t.string    "subject",          :default => ""
+    t.integer   "user_id",          :default => 0,  :null => false
+    t.integer   "parent_id"
+    t.integer   "lft"
+    t.integer   "rgt"
+    t.timestamp "created_at",                       :null => false
+    t.timestamp "updated_at",                       :null => false
   end
 
   add_index "comments", ["commentable_id", "commentable_type"], :name => "index_comments_on_commentable_id_and_commentable_type"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "course_students", :force => true do |t|
-    t.integer  "course_id"
-    t.integer  "student_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer   "course_id"
+    t.integer   "student_id"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "course_teachers", :force => true do |t|
-    t.integer  "course_id"
-    t.integer  "teacher_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer   "course_id"
+    t.integer   "teacher_id"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "courses", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string    "name"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "papers", :force => true do |t|
-    t.integer  "assignment_id"
-    t.string   "name"
-    t.string   "description"
-    t.string   "file"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.integer   "assignment_id"
+    t.string    "name"
+    t.string    "description"
+    t.string    "file"
+    t.timestamp "created_at",    :null => false
+    t.timestamp "updated_at",    :null => false
   end
 
   create_table "users", :force => true do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string    "provider"
+    t.string    "uid"
+    t.string    "name"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
 end
